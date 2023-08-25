@@ -1,0 +1,55 @@
+name: chitchat
+description: Real-Time chatting App.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.5 <4.0.0"
+
+dependencies:
+  cloud_firestore: ^4.9.0
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^4.8.0
+  firebase_core: ^2.15.1
+  firebase_storage: ^11.2.6
+  flutter:
+    sdk: flutter
+  get: ^4.6.5
+  permission_handler: ^10.4.3
+  velocity_x: ^4.1.1
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/img/
+
+  fonts:
+    - family: blogger
+      fonts:
+        - asset: assets/fonts/blogger.otf
+    - family: blogger_bold
+      fonts:
+        - asset: assets/fonts/blogger_bold.otf
+    - family: mont
+      fonts:
+        - asset: assets/fonts/mont.ttf
+    - family: mont_bold
+      fonts:
+        - asset: assets/fonts/mont_bold.ttf
+    - family: mont_extra_bold
+      fonts:
+        - asset: assets/fonts/mont_bold.ttf
+          weight: 100
+    - family: mont_semi
+      fonts:
+        - asset: assets/fonts/mont_semi.ttf
+    - family: mont_light
+      fonts:
+        - asset: assets/fonts/mont_light.ttf
