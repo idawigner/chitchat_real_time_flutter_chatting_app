@@ -1,4 +1,4 @@
-export 'auth/verification_screen.dart';
+export 'auth/signin_screen.dart';
 export 'chat/chat.dart';
 export 'home/home.dart';
 export 'profile/profile.dart';

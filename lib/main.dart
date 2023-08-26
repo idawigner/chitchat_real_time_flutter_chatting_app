@@ -10,11 +10,11 @@ main() async {
     const SystemUiOverlayStyle(
         statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark),
   );
-  runApp(const App());
+  runApp(const MyApp());
 }
 
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

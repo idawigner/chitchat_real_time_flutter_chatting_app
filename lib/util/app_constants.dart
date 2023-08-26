@@ -50,8 +50,10 @@ const username = "Username",
     recentupdates = "Recent Updates",
     camera = "Camera",
     invite = "Invite a friend",
-    logout = "Logout",
     settings = "Settings",
+    loggedin = "Logged In",
+    loggedout = "Logged Out",
+    logout = "Logout",
     poweredby = "Desgined & Developed by Dawood I.";
 
 const edgeinsets16 = EdgeInsets.all(16);

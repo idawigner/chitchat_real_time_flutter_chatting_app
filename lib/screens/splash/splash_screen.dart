@@ -83,7 +83,7 @@ class ChatApp extends StatelessWidget {
                         ),
                         onPressed: () {
                           Get.to(
-                            () => const VerificationScreen(),
+                            () => const SignInScreen(),
                             transition: Transition.downToUp,
                           );
                         },
