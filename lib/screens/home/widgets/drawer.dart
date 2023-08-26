@@ -82,7 +82,10 @@ Widget drawer(BuildContext context) {
           ),
           const Spacer(),
           ListTile(
-            onTap: () {},
+            onTap: () async {
+              await auth.signOut();
+              Get.offAll(() => const WelcomeScreen());
+            },
             leading: const Icon(
               logoutIcon,
               color: white,

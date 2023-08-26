@@ -32,7 +32,7 @@ const blogger = "blogger",
     montSemiBold = "mont_semi",
     montLight = "mont_light";
 
-const cont = "Start Chatting Now!",
+const start = "Start Chatting Now!",
     otp = "We will send an OTP to your phone number.",
     msgUser0 = "Hi, Its a test message from me.",
     msgUser1 = "Hello, message successfully received!",
@@ -54,6 +54,6 @@ const username = "Username",
     loggedin = "Logged In",
     loggedout = "Logged Out",
     logout = "Logout",
-    poweredby = "Desgined & Developed by Dawood I.";
+    poweredby = "Dawood I.";
 
 const edgeinsets16 = EdgeInsets.all(16);

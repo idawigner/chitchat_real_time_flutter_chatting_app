@@ -15,8 +15,8 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(AuthController());
-    // var mediaheight = MediaQuery.of(context).size.height;
-    // var mediawidth = MediaQuery.of(context).size.width;
+    var mediaheight = MediaQuery.of(context).size.height;
+    var mediawidth = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
         // Close the keyboard when tapped outside of a text field
@@ -44,96 +44,114 @@ class _SignInScreenState extends State<SignInScreen> {
             padding: edgeinsets16,
             child: Column(
               children: [
-                //username Field
+                Form(
+                  key: controller.formKey,
+                  child: Column(
+                    children: [
+                      //username Field
+                      TextFormField(
+                        controller: controller.usernameController,
+                        validator: (value) {
+                          if (value!.isEmpty || value.length < 6) {
+                            return "Please enter your Full Name";
+                          }
+                          return null;
+                        },
+                        cursorColor: primaryColor,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: const BorderSide(
+                                color: gray,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: const BorderSide(
+                                color: primaryColor,
+                              ),
+                            ),
+                            prefixIcon: const Icon(
+                              personIcon,
+                              color: primaryColor,
+                            ),
+                            alignLabelWithHint: true,
+                            labelText: "Username",
+                            hintText: "Umar Ali",
+                            labelStyle: const TextStyle(
+                              color: gray,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            floatingLabelStyle: const TextStyle(
+                              color: primaryColor,
+                            )),
+                      ),
+                      15.heightBox,
 
-                TextFormField(
-                  controller: controller.usernameController,
-                  cursorColor: primaryColor,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(
-                          color: gray,
+                      //Phone Number Field
+                      TextFormField(
+                        controller: controller.phoneController,
+                        validator: (value) {
+                          if (value!.isEmpty || value.length < 6) {
+                            return "Please enter your phone number";
+                          }
+                          return null;
+                        },
+                        cursorColor: primaryColor,
+                        keyboardType: TextInputType.phone,
+                        maxLength: 10,
+                        onFieldSubmitted: (value) {
+                          setState(() {
+                            if (value.isEmpty) {
+                              _isInvalid = false;
+                            }
+                          });
+                        },
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(
+                              color: _isInvalid
+                                  ? Colors.redAccent
+                                  : Colors.grey[400]!,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(
+                              color: _isInvalid
+                                  ? Colors.redAccent
+                                  : const Color(0xffA67F8E),
+                            ),
+                          ),
+                          prefixIcon: Icon(
+                            phoneIcon,
+                            color: _isInvalid ? Colors.redAccent : primaryColor,
+                          ),
+                          alignLabelWithHint: true,
+                          labelText: "Phone Number",
+                          prefixText: "+92 ",
+                          hintText: "3001234567",
+                          labelStyle: TextStyle(
+                            color: _isInvalid ? Colors.redAccent : gray,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          errorText: _isInvalid ? "Invalid number!" : null,
+                          floatingLabelStyle: const TextStyle(
+                            color: primaryColor,
+                          ),
                         ),
+                        onChanged: (value) {
+                          setState(() {
+                            _isInvalid = value.length != 10;
+                          });
+                        },
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(
-                          color: primaryColor,
-                        ),
-                      ),
-                      prefixIcon: const Icon(
-                        personIcon,
-                        color: primaryColor,
-                      ),
-                      alignLabelWithHint: true,
-                      labelText: "Username",
-                      hintText: "Ali",
-                      labelStyle: const TextStyle(
-                        color: gray,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      floatingLabelStyle: const TextStyle(
-                        color: primaryColor,
-                      )),
-                ),
-                20.heightBox,
-
-                //Phone Number Field
-
-                TextFormField(
-                  controller: controller.phoneController,
-                  cursorColor: primaryColor,
-                  keyboardType: TextInputType.phone,
-                  maxLength: 10,
-                  onFieldSubmitted: (value) {
-                    setState(() {
-                      if (value.isEmpty) {
-                        _isInvalid = false;
-                      }
-                    });
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color:
-                            _isInvalid ? Colors.redAccent : Colors.grey[400]!,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color: _isInvalid
-                            ? Colors.redAccent
-                            : const Color(0xffA67F8E),
-                      ),
-                    ),
-                    prefixIcon: Icon(
-                      phoneIcon,
-                      color: _isInvalid ? Colors.redAccent : primaryColor,
-                    ),
-                    alignLabelWithHint: true,
-                    labelText: "Phone Number",
-                    prefixText: "+92 ",
-                    hintText: "3001234567",
-                    labelStyle: TextStyle(
-                      color: _isInvalid ? Colors.redAccent : gray,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    errorText: _isInvalid ? "Invalid number!" : null,
-                    floatingLabelStyle: const TextStyle(
-                      color: primaryColor,
-                    ),
+                    ],
                   ),
-                  onChanged: (value) {
-                    setState(() {
-                      _isInvalid = value.length != 10;
-                    });
-                  },
                 ),
                 10.heightBox,
-                otp.text.size(16).color(bgColor).semiBold.make(),
+                otp.text.size(12).color(bgColor).semiBold.make(),
 
                 //OTP Field
 
@@ -141,13 +159,13 @@ class _SignInScreenState extends State<SignInScreen> {
                   () => Visibility(
                     visible: controller.isOtpSent.value,
                     child: SizedBox(
-                      height: 80,
+                      height: mediaheight * 0.1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: List.generate(
                           6,
                           (index) => SizedBox(
-                            width: 56,
+                            width: mediawidth * 0.13,
                             child: TextField(
                               controller: controller.otpController[index],
                               cursorColor: primaryColor,
@@ -201,13 +219,15 @@ class _SignInScreenState extends State<SignInScreen> {
                         padding: const EdgeInsets.all(16),
                       ),
                       onPressed: () async {
-                        // FocusScope.of(context).unfocus();
+                        FocusScope.of(context).unfocus();
 
-                        if (controller.isOtpSent.value == false) {
-                          controller.isOtpSent.value = true;
-                          await controller.sendOtp();
-                        } else {
-                          await controller.verifyOtp(context);
+                        if (controller.formKey.currentState!.validate()) {
+                          if (controller.isOtpSent.value == false) {
+                            controller.isOtpSent.value = true;
+                            await controller.sendOtp();
+                          } else {
+                            await controller.verifyOtp(context);
+                          }
                         }
                         // print(controller.phoneController.text);
                       },
