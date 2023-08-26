@@ -1,5 +1,4 @@
 import '../../util/util.dart';
-import '../screens.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});

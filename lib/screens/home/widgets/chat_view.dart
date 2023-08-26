@@ -1,5 +1,4 @@
 import '../../../util/util.dart';
-import '../../screens.dart';
 
 Widget chatview(BuildContext context) {
   return Container(

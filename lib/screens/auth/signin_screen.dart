@@ -1,5 +1,3 @@
-import 'package:chitchat/controllers/auth_controller.dart';
-
 import '../../util/util.dart';
 
 class SignInScreen extends StatefulWidget {

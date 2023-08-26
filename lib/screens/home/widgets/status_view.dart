@@ -1,5 +1,3 @@
-import 'package:chitchat/screens/home/widgets/custom_circle_avatar.dart';
-
 import '../../../util/util.dart';
 
 Widget statusview(BuildContext context) {

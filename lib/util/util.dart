@@ -3,6 +3,10 @@ export 'firebase_constants.dart';
 export 'images.dart';
 export 'theme.dart';
 
+export 'package:chitchat/controllers/controllers.dart';
+export 'package:chitchat/screens/screens.dart';
+export 'package:chitchat/services/services.dart';
+
 export 'package:flutter/material.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:firebase_auth/firebase_auth.dart';

@@ -1,5 +1,3 @@
-import 'package:chitchat/screens/home/home.dart';
-
 import '../util/util.dart';
 
 class AuthController extends GetxController {
@@ -19,6 +17,7 @@ class AuthController extends GetxController {
   String verificationID = '';
 
   //Send OTP method
+
   sendOtp() async {
     phoneVerificationCompleted = (PhoneAuthCredential credential) async {
       // Sign the user in (or link) with the auto-generated credential
@@ -27,7 +26,7 @@ class AuthController extends GetxController {
 
     phoneVerificationFailed = (FirebaseAuthException e) {
       if (e.code == 'invalid-phone-number') {
-        print('The provided phone number is not valid.');
+        // print('The provided phone number is not valid.');
       }
     };
 
@@ -44,11 +43,12 @@ class AuthController extends GetxController {
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
     }
   }
 
-  //Verify OTP
+  //Verify OTP method
+
   verifyOtp(context) async {
     String otp = '';
 
@@ -71,7 +71,9 @@ class AuthController extends GetxController {
         await store.set({
           'id': user.uid,
           'name': usernameController.text.toString(),
+          'about': '',
           'phone': phoneController.text.toString(),
+          'image_url': '',
         }, SetOptions(merge: true));
 
         // showing toast of Login
@@ -82,7 +84,7 @@ class AuthController extends GetxController {
             transition: Transition.rightToLeft);
       }
     } catch (e) {
-      print(e);
+      // print(e);
       VxToast.show(context, msg: e.toString());
     }
   }

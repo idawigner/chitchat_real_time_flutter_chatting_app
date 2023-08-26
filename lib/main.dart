@@ -1,6 +1,5 @@
 import 'package:flutter/services.dart';
 
-import 'screens/screens.dart';
 import 'util/util.dart';
 
 main() async {
@@ -34,7 +33,6 @@ class _MyAppState extends State<MyApp> {
           isUser = true;
         });
       }
-
       print("user value is $isUser");
     });
   }

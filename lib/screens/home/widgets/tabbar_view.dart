@@ -1,5 +1,3 @@
-import 'package:chitchat/screens/screens.dart';
-
 import '../../../util/util.dart';
 
 Widget tabbarview(BuildContext context) {
