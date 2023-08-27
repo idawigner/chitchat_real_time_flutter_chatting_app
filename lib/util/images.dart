@@ -1,6 +1,6 @@
 import 'util.dart';
 
-const String logo = "assets/img/ic_logo.png";
+const String logo = "assets/img/logo512.png";
 const String user = "assets/img/ic_user.png";
 
 const backIcon = Icons.arrow_back,
@@ -15,9 +15,11 @@ const backIcon = Icons.arrow_back,
     helpIcon = Icons.help,
     inviteIcon = Icons.emoji_people_rounded,
     cameraIcon = Icons.camera_alt_rounded,
+    galleryIcon = Icons.photo_size_select_actual_rounded,
+    cancelIcon = Icons.cancel_rounded,
     personIcon = Icons.person,
     editIcon = Icons.edit,
-    infoIcon = Icons.info,
+    infoIcon = Icons.info_outline_rounded,
     callIcon = Icons.call,
     videoCallIcon = Icons.videocam_rounded,
     emojiIcon = Icons.emoji_emotions_rounded,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import '../../util/util.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -7,6 +9,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     //init profile controller
     var controller = Get.put(ProfileController());
+    var mediawidth = MediaQuery.of(context).size.width;
 
     return GestureDetector(
       onTap: () {
@@ -21,9 +24,15 @@ class ProfileScreen extends StatelessWidget {
             elevation: 0.0,
             actions: [
               TextButton(
-                onPressed: () {
+                onPressed: () async {
                   FocusScope.of(context).unfocus();
-                  controller.updateProfile(context);
+                  // controller.updateProfile(context);
+                  if (controller.imgpath.isEmpty) {
+                    controller.updateProfile(context);
+                  } else {
+                    await controller.uploadImage();
+                    controller.updateProfile(context);
+                  }
                 },
                 child: "Save"
                     .text
@@ -57,23 +66,41 @@ class ProfileScreen extends StatelessWidget {
 
                     return Column(
                       children: [
-                        CustomCircleAvatar(
-                          radius: 80,
-                          child: Stack(
-                            children: [
-                              avatarImage,
-                              const Positioned(
-                                right: 0,
-                                bottom: 20,
-                                child: CircleAvatar(
-                                  backgroundColor: primaryColor,
-                                  child: Icon(
-                                    cameraIcon,
-                                    color: white,
+                        Obx(
+                          () => CustomCircleAvatar(
+                            radius: mediawidth * 0.25,
+                            child: Stack(
+                              children: [
+                                //when image path is empty
+                                controller.imgpath.isEmpty &&
+                                        data['image_url'] == ''
+                                    ? avatarImage
+                                    : controller.imgpath.isNotEmpty
+                                        ? Image.file(
+                                            File(controller.imgpath.value),
+                                          )
+                                            .box
+                                            .roundedFull
+                                            .clip(Clip.antiAlias)
+                                            .make()
+                                        : Image.network(data['image_url']),
+                                Positioned(
+                                  right: 0,
+                                  bottom: 15,
+                                  child: CircleAvatar(
+                                    backgroundColor: primaryColor,
+                                    child: const Icon(
+                                      cameraIcon,
+                                      color: white,
+                                      //using velocityX onTap here
+                                    ).onTap(() {
+                                      Get.dialog(
+                                          pickerdialog(context, controller));
+                                    }),
                                   ),
-                                ),
-                              )
-                            ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         20.heightBox,

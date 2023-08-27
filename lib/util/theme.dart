@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-const primaryColor = Color(0xffA67F8E);
+const primaryColor = Color(0xffEE663D);
+const secondaryColor = Color(0xff087E8B);
 const bgColor = Color(0xff111422);
 const txtColor = Color(0xff111422);
 

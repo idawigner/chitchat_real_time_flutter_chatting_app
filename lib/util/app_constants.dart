@@ -17,43 +17,50 @@ const drawerListTitles = [
   "Help",
 ];
 
+// App-related variables
 const appname = "ChitChat",
-    tagline = "Connect, Chat, Share,\nEnjoy!",
     chitchat = "Chit Chat",
+    connectinglives = "connecting lives...",
     letsconnect = "Let's Connect!",
     next = "Next",
-    connectinglives = "connecting lives...";
+    tagline = "Connect, Chat, Share,\nEnjoy!";
 
-const blogger = "blogger",
-    bloggerBold = "blogger_bold",
-    mont = "mont",
+// Font-related variables
+const blogger = "blogger", bloggerBold = "blogger_bold";
+
+const mont = "mont",
     montBold = "mont_bold",
     montExtraBold = "mont_extra_bold",
-    montSemiBold = "mont_semi",
-    montLight = "mont_light";
+    montLight = "mont_light",
+    montSemiBold = "mont_semi";
 
-const start = "Start Chatting Now!",
-    otp = "We will send an OTP to your phone number.",
-    msgUser0 = "Hi, Its a test message from me.",
+// Start-related variables
+const msgUser0 = "Hi, Its a test message from me.",
     msgUser1 = "Hello, message successfully received!",
     namesub =
-        "This is not your username or pin. This name will be visible to your ChitChat contacts.";
+        "This is not your username or pin. This name will be visible to your ChitChat contacts.",
+    otp = "We will send an OTP to your phone number.",
+    start = "Start Chatting Now!";
 
-const username = "Username",
-    name = "Name",
-    about = "About",
-    phone = "Phone",
+// UI-related variables
+const about = "About",
     account = "Account",
-    profile = "Profile",
-    chats = "Chats",
-    status = "Status",
-    recentupdates = "Recent Updates",
     camera = "Camera",
+    cancel = "Cancel",
+    chats = "Chats",
+    gallery = "Gallery",
     invite = "Invite a friend",
-    settings = "Settings",
     loggedin = "Logged In",
     loggedout = "Logged Out",
     logout = "Logout",
-    poweredby = "Dawood I.";
+    name = "Name",
+    phone = "Phone",
+    poweredby = "Dawood I.",
+    profile = "Profile",
+    recentupdates = "Recent Updates",
+    settings = "Settings",
+    source = "Select Source",
+    status = "Status",
+    username = "Username";
 
 const edgeinsets16 = EdgeInsets.all(16);
