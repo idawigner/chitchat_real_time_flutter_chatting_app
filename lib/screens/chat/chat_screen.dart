@@ -1,7 +1,8 @@
 import '../../util/util.dart';
 
 class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
+  final String? user;
+  const ChatScreen({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -34,17 +35,17 @@ class ChatScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: RichText(
-                        text: const TextSpan(
+                        text: TextSpan(
                           children: [
                             TextSpan(
-                              text: "$username\n",
-                              style: TextStyle(
+                              text: "$user\n",
+                              style: const TextStyle(
                                 fontFamily: montSemiBold,
                                 fontSize: 16,
                                 color: bgColor,
                               ),
                             ),
-                            TextSpan(
+                            const TextSpan(
                               text: "last seen",
                               style: TextStyle(
                                 fontSize: 12,

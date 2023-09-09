@@ -1,2 +1,2 @@
-export './_screen.dart';
+export './compose_screen.dart';
 export './widgets/widgets.dart';

@@ -26,12 +26,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-flutter_icons:
-  android: true
-  ios: true
-  image_path: "assets/img/ChitChatLogo.png"
-  adaptive_icon_background: "#FFFFFF00"
-  adaptive_icon_foreground: "assets/img/logo256.png"
+# flutter_icons:
+#   android: true
+#   ios: true
+#   image_path: "assets/img/ChitChatLogo.png"
+#   adaptive_icon_background: "#FFFFFF00"
+#   adaptive_icon_foreground: "assets/img/logo256.png"
 
 flutter:
   uses-material-design: true

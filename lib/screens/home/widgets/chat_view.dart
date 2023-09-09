@@ -16,7 +16,9 @@ Widget chatview(BuildContext context) {
             child: ListTile(
               onTap: () {
                 Get.to(
-                  () => const ChatScreen(),
+                  () => const ChatScreen(
+                    user: "Demo UN",
+                  ),
                   transition: Transition.rightToLeft,
                 );
               },

@@ -54,7 +54,7 @@ class ProfileController extends GetxController {
   //upload image to fire storage
   uploadImage() async {
     if (imgpath.isEmpty) {
-      print("No image selected to upload.");
+      // print("No image selected to upload.");
       return;
     }
 
@@ -66,9 +66,9 @@ class ProfileController extends GetxController {
       await ref.putFile(File(imgpath.value));
       var downloadURL = await ref.getDownloadURL();
       imglink = downloadURL;
-      print("Image uploaded successfully. URL: $downloadURL");
+      // print("Image uploaded successfully. URL: $downloadURL");
     } catch (e) {
-      print("Error uploading image: $e");
+      // print("Error uploading image: $e");
     }
   }
 

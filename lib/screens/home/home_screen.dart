@@ -18,9 +18,12 @@ class HomeScreen extends StatelessWidget {
           drawer: drawer(context),
           floatingActionButton: FloatingActionButton(
             backgroundColor: primaryColor,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => const ComposeScreen(),
+                  transition: Transition.downToUp);
+            },
             child: const Icon(
-              addIcon,
+              editIcon,
             ),
           ),
           backgroundColor: bgColor,
